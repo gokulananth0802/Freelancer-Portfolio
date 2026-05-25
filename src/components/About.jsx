@@ -13,12 +13,7 @@ export default function About() {
               />
             </div>
           </div>
-          <div className="absolute -bottom-6 -right-6 neumorphic-raised p-4 rounded-2xl">
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-label-md font-semibold text-on-surface">Available for Hire</span>
-            </div>
-          </div>
+          
         </div>
 
         {/* Bio */}
