@@ -38,7 +38,7 @@ export default function Portfolio() {
               <div className="rounded-2xl overflow-hidden mb-6 h-64">
                 <img
                   alt={p.title}
-                  className="w-full h-full object-cover object-top grayscale transition-all group-hover:grayscale-0"
+                  className="w-full h-full object-cover object-top"
                   src={p.img}
                 />
               </div>

@@ -28,7 +28,7 @@ export default function Hero() {
           <div className="neumorphic-raised rounded-3xl p-4 overflow-hidden transform rotate-3">
             <img
               alt="Modern Web Dashboard"
-              className="rounded-2xl w-full grayscale-[20%] hover:grayscale-0 transition-all duration-500"
+              className="rounded-2xl w-full transition-all duration-500"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuB90DAl_QKdZvuLI_9JELUPBN5bHr64RSqgQHWoKMDiMIqFKGm76oRxXecf61hcpkfNdNhfijI9kB3yLSW3m4NpmAzdfpXvk6RXjy-Ktt7MPhv_jlcWuWVfXmzRk4j6w5UZO2wBC8uT2EoEP1dUE0GxQR6FyzIr1JQwXwYlS82Q4aB8Jo_n0dXMqKb7cn1kI_vut4__Txd9Jr_xwCYbvJyZfEyV5wULNxd1cZJ1cVxERnPzgD7K8jhBFIbseJIhwvyvWaLnatgAZPPp"
             />
           </div>
