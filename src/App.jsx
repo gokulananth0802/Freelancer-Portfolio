@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Services from './components/Services'
 import Portfolio from './components/Portfolio'
 import Results from './components/Results'
 import Pricing from './components/Pricing'
@@ -14,6 +15,7 @@ function App() {
     <>
       <Navbar />
       <Hero />
+      <Services />
       <Portfolio />
       <Results />
       <Pricing />

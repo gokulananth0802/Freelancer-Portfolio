@@ -1,32 +1,64 @@
 export default function Testimonials() {
+  const testimonials = [
+    {
+      quote: "Goforj Solutions transformed our online presence completely. From website development to branding and social media graphics, everything was executed flawlessly.",
+      author: "Shresh Kumar",
+      role: "CEO, TechFlow Solutions",
+      rating: 5,
+    },
+    {
+      quote: "Exceptional quality and timely delivery! The website speed and SEO optimizations helped our business reach new customers within weeks.",
+      author: "Praveen Raj",
+      role: "Founder, SSRJ Farms",
+      rating: 5,
+    },
+    {
+      quote: "From content writing to social media management, Goforj Solutions handled our entire digital strategy smoothly. Highly professional work!",
+      author: "Karthik Subramanian",
+      role: "Director, Aadhava Group",
+      rating: 5,
+    },
+  ]
+
   return (
-    <section className="py-24 px-margin-mobile md:px-margin-desktop overflow-hidden">
+    <section className="py-24 px-margin-mobile md:px-margin-desktop bg-surface/30">
       <div className="max-w-[1280px] mx-auto">
-        <div className="neumorphic-raised p-12 rounded-[3rem] relative flex flex-col md:flex-row items-center gap-12">
-          <div className="absolute top-10 right-10 opacity-10">
-            <span className="material-symbols-outlined text-[120px] text-primary">format_quote</span>
+        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-bold text-primary uppercase tracking-widest">
+            <span>Client Feedback</span>
           </div>
+          <h2 className="text-headline-xl font-bold text-on-surface">Trusted by Growing Businesses</h2>
+          <p className="text-body-lg text-on-surface-variant">
+            Here is what clients say about collaborating with Goforj Solutions.
+          </p>
+        </div>
 
-          <div className="w-48 h-48 rounded-full neumorphic-pressed p-2 shrink-0">
-            <img
-              alt="Shresh Kumar"
-              className="w-full h-full object-cover rounded-full"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHkW4iySS3271cWQJa3F1YeujbjxIg4b3jB9kB1x_WSn17xg236lw3uYTG61bdzgflZn4nilqF01lILhkuFcYuDfB4CR_j8RA0UJ-8zWFV6tLZMPUV-1sbhktovZs4jett3MgoEgtklkD_boQ30qXfiHE5CAbNeVfm6cqdJWLiw5nPZlH4GClBG5yzEkIZplvN4SwKo_OEHZg2lMoQvMrhyrL8vzRnkBYrGk4cm7G5E14oSWmMd_RXxDv-njXSw4Ug8gnMQK5XIft1"
-            />
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((t, idx) => (
+            <div key={idx} className="glass-card rounded-3xl p-8 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+              <div className="space-y-4">
+                {/* Star rating */}
+                <div className="flex gap-1 text-amber-500">
+                  {[...Array(t.rating)].map((_, i) => (
+                    <span key={i} className="material-symbols-outlined text-2xl fill-current">
+                      star
+                    </span>
+                  ))}
+                </div>
 
-          <div className="space-y-6 max-w-2xl">
-            <span className="material-symbols-outlined text-primary text-5xl">format_quote</span>
-            <blockquote className="text-headline-lg font-bold italic text-on-surface">
-              "Goforj transformed our outdated site into a modern powerhouse. Our inquiries tripled within the first month of launch. Highly recommended for anyone serious about growth."
-            </blockquote>
-            <div>
-              <p className="text-headline-md font-semibold text-primary">Shresh Kumar</p>
-              <p className="text-label-md font-semibold text-on-surface-variant uppercase tracking-widest">
-                CEO, TechFlow Solutions
-              </p>
+                <blockquote className="text-body-md text-on-surface leading-relaxed italic">
+                  "{t.quote}"
+                </blockquote>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-primary/10">
+                <p className="text-headline-md font-bold text-primary text-base">{t.author}</p>
+                <p className="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">
+                  {t.role}
+                </p>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

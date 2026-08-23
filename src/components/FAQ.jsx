@@ -2,59 +2,64 @@ import { useState } from 'react'
 
 const faqData = [
   {
-    q: 'How long does a project take?',
-    a: 'Typically 2-4 weeks for a standard website and 1 week for a landing page.',
+    q: 'What services does Goforj Solutions offer?',
+    a: 'We provide Graphic Design & Branding, Content Writing & Copywriting, Social Media Management, Custom Web Design & React Development, and Search Engine Optimization (SEO).',
   },
   {
-    q: 'Do you offer maintenance?',
-    a: 'Yes, we provide ongoing maintenance, security updates, and performance monitoring to ensure your site stays at its peak.',
+    q: 'How long does a web or design project take?',
+    a: 'Typically 1-2 weeks for landing pages and graphics/content deliverables, and 2-4 weeks for multi-page web applications.',
   },
   {
-    q: 'What technology do you use?',
-    a: 'We primarily use React, Next.js, and Tailwind CSS for the frontend, paired with Node.js or headless CMS solutions on the backend.',
+    q: 'Can you manage our social media and content on an ongoing basis?',
+    a: 'Yes! We offer monthly retainer packages for social media post designing, content creation, caption writing, and growth management.',
   },
   {
-    q: 'Can you help with branding?',
-    a: 'Absolutely. We offer full branding packages including logo design, color palettes, typography, and brand guidelines.',
+    q: 'What technology stack do you use for web development?',
+    a: 'We specialize in modern web technologies including React, Next.js, Vite, Tailwind CSS, JavaScript, and Node.js for ultra-fast, responsive web apps.',
   },
   {
-    q: 'Do I own the source code?',
-    a: 'Yes. Once the project is complete and payment is received, you own 100% of the source code and all assets.',
+    q: 'Do I own all final assets and code?',
+    a: 'Yes. Once the project is completed, you own 100% of all graphic designs, written content, source code, and assets created for your business.',
   },
   {
-    q: 'How do we get started?',
-    a: "Simply book a call or fill out our contact form. We'll schedule a discovery session to understand your needs and provide a detailed proposal.",
+    q: 'How do we get started with Goforj Solutions?',
+    a: "Simply fill out our contact form or send us a message on WhatsApp. We'll discuss your goals and provide a customized plan.",
   },
 ]
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(1) // second item open by default
+  const [openIndex, setOpenIndex] = useState(0)
 
   const toggle = (i) => setOpenIndex(openIndex === i ? -1 : i)
 
   return (
-    <section className="py-24 px-margin-mobile md:px-margin-desktop bg-surface" id="faq">
+    <section className="py-24 px-margin-mobile md:px-margin-desktop bg-surface/50" id="faq">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-headline-xl font-bold text-center mb-16">Common Questions.</h2>
+        <div className="text-center mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-bold text-primary uppercase tracking-widest">
+            <span>Got Questions?</span>
+          </div>
+          <h2 className="text-headline-xl font-bold text-on-surface">Frequently Asked Questions</h2>
+        </div>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           {faqData.map((item, i) => {
             const isOpen = openIndex === i
             return (
               <div
                 key={i}
-                className={`${isOpen ? 'neumorphic-pressed ring-1 ring-primary/20' : 'neumorphic-raised'} rounded-2xl overflow-hidden transition-all`}
+                className={`${isOpen ? 'glass-card border-primary/30 shadow-md' : 'glass-card-subtle'} rounded-2xl overflow-hidden transition-all`}
               >
                 <button
-                  className="w-full p-6 flex justify-between items-center cursor-pointer text-left"
+                  className="w-full p-6 flex justify-between items-center cursor-pointer text-left gap-4"
                   onClick={() => toggle(i)}
                 >
-                  <h4 className={`text-headline-md font-semibold ${isOpen ? 'text-primary' : ''}`}>{item.q}</h4>
+                  <h3 className={`text-headline-md font-semibold text-base md:text-lg ${isOpen ? 'text-primary' : 'text-on-surface'}`}>{item.q}</h3>
                   <span className="material-symbols-outlined text-primary">{isOpen ? 'remove' : 'add'}</span>
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-6">
-                    <p className="text-on-surface-variant">{item.a}</p>
+                  <div className="px-6 pb-6 pt-0 border-t border-primary/10 mt-2">
+                    <p className="text-on-surface-variant text-body-md pt-4">{item.a}</p>
                   </div>
                 )}
               </div>
